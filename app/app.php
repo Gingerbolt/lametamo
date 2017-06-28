@@ -19,6 +19,18 @@
       return $app["twig"]->render("pets.html.twig", array("pets" => Pet::getAll()));
     });
 
+    $app->post("/pets", function() use ($app)  {
+      $pet = new Pet($_POST['name'], microtime(true));
+      $pet->save();
+      // var_dump($pet->getBirth());
+      return $app['twig']->render('create_pet.html.twig', array('newpet' => $pet));
+    });
+
+    $app->post("/delete_pets", function() use ($app) {
+      Pet::deleteAll();
+      return $app['twig']->render('delete_pet.html.twig');
+    });
+
     return $app;
 
  ?>

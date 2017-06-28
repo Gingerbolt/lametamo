@@ -2,17 +2,18 @@
     class Pet
     {
         private $pet_name;
-        private $food;
         private $birth;
+        private $food;
         private $attention;
         private $rest;
         private $death;
 
-        function __construct($pet_name, $food = 100, $birth, $attention = 100, $rest = 100, $death = false)
+        function __construct($pet_name, $birth, $food = 100, $attention = 100, $rest = 100, $death = false)
         {
             $this->pet_name = $pet_name;
-            $this->food = $food;
             $this->birth = $birth;
+            $this->food = $food;
+            $this->rest = $rest;
             $this->attention = $attention;
             $this->death = $death;
         }

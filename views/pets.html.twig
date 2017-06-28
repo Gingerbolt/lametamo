@@ -9,10 +9,10 @@
             <p>Here are your Pets</p>
             <ul>
                 {% for pet in pets %}
-                    <li>{{ pet.getPetName }}</li>
-                    <p>{{ pet.getFood }}</p>
-                    <p>{{ pet.getRest }}</p>
-                    <p>{{ pet.getAttention }}</p>
+                    <li>Name: {{ pet.getPetName }}</li>
+                    <p>Food: {{ pet.getFood }}</p>
+                    <p>Rest: {{ pet.getRest }}</p>
+                    <p>Attention: {{ pet.getAttention }}</p>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -22,6 +22,9 @@
           <input id='name' name='name' type='text'>
 
           <button type='submit' class='btn-info'>Add Pet</button>
+      </form>
+      <form action='/delete_pets' method='post'>
+          <button type='submit' class='btn-danger'>delete</button>
       </form>
 </body>
 </html>
