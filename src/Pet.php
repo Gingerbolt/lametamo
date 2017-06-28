@@ -77,13 +77,19 @@
           return $this->death;
       }
 
- ?>
+      function save()
+      {
+          array_push($_SESSION['list_of_pets'], $this);
+      }
 
+      static function getAll()
+      {
+          return $_SESSION['list_of_pets'];
+      }
 
+      static function deleteAll()
+      {
+          return $_SESSION['list_of_pets'] = array();
+      }
 
-
-
-    }
-
-
- ?>
+?>
