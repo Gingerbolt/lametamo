@@ -9,7 +9,7 @@
       $_SESSION['list_of_pets'] = array();
     }
 
-    $app = new Silex\Applicaiton();
+    $app = new Silex\Application();
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array("twig.path" => __DIR__."/../views"
     ));
@@ -19,6 +19,6 @@
       return $app["twig"]->render("pets.html.twig", array("pets" => Pet::getAll()));
     });
 
-
+    return $app;
 
  ?>

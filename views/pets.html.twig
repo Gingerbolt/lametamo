@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Tamagotchi</title>
+</head>
+<body>
+    <h1>Your Pets</h1>
+        {% if pets is not empty %}
+            <p>Here are your Pets</p>
+            <ul>
+                {% for pet in pets %}
+                    <li>{{ pet.getPetName }}</li>
+                    <p>{{ pet.getFood }}</p>
+                    <p>{{ pet.getRest }}</p>
+                    <p>{{ pet.getAttention }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+      <form action='/pets' method="post">
+          <label for='name'>Name Your Tamagotchi</label>
+          <input id='name' name='name' type='text'>
+
+          <button type='submit' class='btn-info'>Add Pet</button>
+      </form>
+</body>
+</html>
